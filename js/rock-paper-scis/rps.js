@@ -21,13 +21,12 @@
 //      END-FXN
 // 2. 
 //      FXN playRound(playerSelection, computerSelection)
-//          LET playerSelection = case insensitive input;
+//          CONST playerSelection = case insensitive input;
 //          IF (playerSelection is not Rock or Paper or Scissors)
-//              RETURN 'Please enter a valid selection: Rock, Paper, or Scissors';
-//              BREAK;
+//              RETURN 'Please enter a valid selection.';
 //          END-IF
 // 
-//          LET computerSelection = getComputerChoice();
+//          CONST computerSelection = getComputerChoice();
 // 
 //          IF (playerSelection is computerSelection)
 //              RETURN 'It's a draw!';
@@ -69,6 +68,7 @@
 //      END-FXN
 
 
+// Randomly return any of the strings
 function getComputerChoice() {
     const randomNum = Math.floor(Math.random() * 3);
 
@@ -81,3 +81,30 @@ function getComputerChoice() {
             return 'Scissors';
     }
 }
+
+function playRound(playerSelection, computerSelection) {
+    const playerSelection =  prompt('Choose Rock / Paper / Scissors:').toLowerCase();
+    // Validate input
+    if (playerSelection != 'Rock' || playerSelection != 'Paper' || playerSelection != 'Scissors') {
+        return 'Enter a valid input.';
+    }
+    const computerSelection = getComputerChoice();
+    
+    // RPS RUle
+    if (playerSelection === computerSelection) {
+        return 'Draw!';
+    } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
+        return 'You lose! Paper beats Rock.';
+    } else if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
+        return 'You lose! Scissors beats Paper.';
+    } else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
+        return 'You lose! Rock beats Scissors.';
+    } else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
+        return 'You win! Rock beats Scissors.'
+    } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
+        return 'You win! Paper beats Rock.';
+    } else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
+        return 'You win! Scissors beats Paper.';
+    }
+}
+
