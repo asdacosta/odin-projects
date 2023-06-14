@@ -83,13 +83,13 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    const playerSelection =  prompt('Choose Rock / Paper / Scissors:').toLowerCase();
+    playerSelection =  prompt('Choose Rock / Paper / Scissors:').toLowerCase();
     // Validate input
     if (playerSelection != 'Rock' || playerSelection != 'Paper' || playerSelection != 'Scissors') {
         return 'Enter a valid input.';
     }
-    const computerSelection = getComputerChoice();
-    
+    computerSelection = getComputerChoice();
+
     // RPS RUle
     if (playerSelection === computerSelection) {
         return 'Draw!';
