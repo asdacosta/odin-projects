@@ -109,22 +109,23 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+
 function game() {
-    let player, computer, result, outcome;
-    for (m = 0; m < 5; m++) {
+    let player = 0,
+        computer = 0,
+        result, outcome;
+    for (let m = 0; m < 5; m++) {
         // Capture and return value of playRound fxn
         outcome = playRound();
         console.log(outcome);
 
         if (outcome === 'Draw!') {
-            player += 0;
-            computer += 0;
-        } else if (outcome.substring(0, 7) === 'You win!') {
+
+        } else if (outcome.substring(0, 7) === 'You win') {
             player += 1;
-            computer += 0;
-        } else if (outcome.substring(0, 8) === 'You lose!') {
-            player += 0;
-            computer +=1;
+            console.log(player);
+        } else if (outcome.substring(0, 8) === 'You lose') {
+            computer += 1;
         }
 
         console.log(`Player score: ${player} \nComputer score: ${computer}`);
