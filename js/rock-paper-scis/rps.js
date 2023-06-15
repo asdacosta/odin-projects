@@ -119,21 +119,20 @@ function game() {
         outcome = playRound();
         console.log(outcome);
 
+        // Store values
         if (outcome === 'Draw!') {
 
         } else if (outcome.substring(0, 7) === 'You win') {
             player += 1;
-            console.log(player);
         } else if (outcome.substring(0, 8) === 'You lose') {
             computer += 1;
         }
-
         console.log(`Player score: ${player} \nComputer score: ${computer}`);
-        
     }
-    // if (player > computer) {
-    //     return 'You won the game :)';
-    // } else {
-    //     return 'You lost the game :(';
-    // }
+
+    if (player > computer) {
+        return 'You won the game :)';
+    } else {
+        return 'You lost the game :(';
+    }
 }
