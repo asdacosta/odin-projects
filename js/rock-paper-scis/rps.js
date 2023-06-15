@@ -132,7 +132,9 @@ function game() {
 
     if (player > computer) {
         return 'You won the game :)';
-    } else {
+    } else if (player < computer) {
         return 'You lost the game :(';
+    } else {
+        return 'You did not follow rules of the game';
     }
 }
