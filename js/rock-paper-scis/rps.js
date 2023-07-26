@@ -114,7 +114,7 @@ function game() {
     let player = 0,
         computer = 0,
         result, outcome;
-    for (let m = 0; m < 5; m++) {
+    // for (let m = 0; m < 5; m++) {
         // Capture and return value of playRound fxn
         outcome = playRound();
         console.log(outcome);
@@ -128,7 +128,7 @@ function game() {
             computer += 1;
         }
         console.log(`Player score: ${player} \nComputer score: ${computer}`);
-    }
+    // }
 
     if (player > computer) {
         return 'You won the game :)';
