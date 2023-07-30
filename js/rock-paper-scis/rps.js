@@ -83,7 +83,8 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection =  prompt('Choose Rock / Paper / Scissors:').toLowerCase();
+    // playerSelection =  prompt('Choose Rock / Paper / Scissors:').toLowerCase();
+
     // Validate input
     if (playerSelection !== 'rock' && playerSelection !== 'paper' && playerSelection !== 'scissors') {
         return 'Enter a valid input.';
@@ -106,6 +107,8 @@ function playRound(playerSelection, computerSelection) {
         return 'You win! Paper beats Rock.';
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
         return 'You win! Scissors beats Paper.';
+    } else {
+        return 'Something went wrong';
     }
 }
 
@@ -138,3 +141,27 @@ function game() {
         return 'You did not follow rules of the game';
     }
 }
+
+const btn1 = document.createElement('button');
+btn1.textContent = 'Rock';
+btn1.addEventListener('click', () => {
+    console.log('Rock button clicked!');
+    playRound('rock', getComputerChoice());
+})
+document.body.appendChild(btn1);
+
+const btn2 = document.createElement('button');
+btn2.textContent = 'Paper';
+btn2.addEventListener('click', () => {
+    console.log('Paper button clicked!');
+    playRound('paper', getComputerChoice());
+})
+document.body.appendChild(btn2);
+
+const btn3 = document.createElement('button');
+btn3.textContent = 'Scissors';
+btn3.addEventListener('click', () => {
+    console.log('Scissors button clicked!');
+    playRound('scissors', getComputerChoice());
+})
+document.body.appendChild(btn3);
