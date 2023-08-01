@@ -174,6 +174,9 @@ function playRound(playerSelection, computerSelection) {
         div.appendChild(p8);
         player += 1;
     }
+    const para0 = document.createElement('p');
+    para0.textContent = 'Your score: ' + player + '\nComputer score: ' + computer;
+    div.appendChild(para0);
 }
 
 // This fxn is on halt
